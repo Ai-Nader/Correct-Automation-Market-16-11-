@@ -1,0 +1,16 @@
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+  [plugins.inputs]
+  skipBuildCache = true
+
+[build]
+command = "npm run build"
+publish = "out"
+
+[build.environment]
+NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
